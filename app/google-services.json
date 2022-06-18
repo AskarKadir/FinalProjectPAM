@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "421287303581",
+    "project_id": "awallet-788b5",
+    "storage_bucket": "awallet-788b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421287303581:android:4156cf42a3283fb2a17774",
+        "android_client_info": {
+          "package_name": "com.example.awallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421287303581-2nbo0nn7lcom0lddu7amu982685osvt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD34TWLJuX5tOKm--tUbWquNOUh5wO1Zj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421287303581-2nbo0nn7lcom0lddu7amu982685osvt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
