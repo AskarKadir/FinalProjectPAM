@@ -3,6 +3,7 @@ package com.example.awallet;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -57,14 +58,16 @@ public class AddData extends AppCompatActivity {
             public void onClick(View v) {
                 if (!Jenis.getText().toString().equals("Silahkan Pilih Data")){
                     Map<String, Object> addDatanew = new HashMap<>();
-                    addDatanew.put("Nominal", Arrays.asList(inNominal.getText().toString()));
-                    addDatanew.put("Nama", Arrays.asList(inNama.getText().toString()));
+                    addDatanew.put("Nominal"+Jenis.getText().toString(), inNominal.getText().toString());
+                    addDatanew.put("Nama"+Jenis.getText().toString(), inNama.getText().toString());
                     System.out.println(dataakun);
-                    db.collection(Jenis.getText().toString()).document(dataakun).set(addDatanew)
+                    db.collection("Users").document(dataakun).update(addDatanew)
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Log.d(TAG, "Data Berhasil Ditambahkan");
+                                    Intent i = new Intent(getApplicationContext(),Dashboard.class);
+                                    startActivity(i);
                                 }
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -89,11 +92,8 @@ public class AddData extends AppCompatActivity {
         bPengeluaran.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Jenis.setText("Pengeluaran");
+                Toast.makeText(AddData.this, "Fitur masih dalam pengembangan", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
     }
 }

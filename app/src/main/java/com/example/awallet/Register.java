@@ -50,30 +50,6 @@ public class Register extends AppCompatActivity {
                 }else{
                     /*for Pemasukan*/
                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    db.collection("Pemasukan").document(username).set(mapdata).
-                            addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Log.d(TAG, "DocumentSnapshot added with ID: "+username);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "Erorr Adding Document ",e);
-                        }
-                    });
-                    /*for Pengeluaran*/
-                    db.collection("Pengeluaran").document(username).set(mapdata).
-                            addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d(TAG, "DocumentSnapshot added with ID: "+username);
-                            }}).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d(TAG, "Erorr Adding Document ",e);
-                        }
-                    });
                     mapdata.put("Username",username);
                     mapdata.put("Nama",nama);
                     mapdata.put("Password",password);
